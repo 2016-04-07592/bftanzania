@@ -1,0 +1,136 @@
+<style>
+	#canvas-image {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+</style>
+<div class="uk-container">
+	<h2 class="uk-h2 uk-margin-top uk-margin-bottom">Elisante Ephraim</h2>
+</div>
+<div class="uk-section uk-section-default uk-padding-remove-top">
+	<div class="uk-container">
+		<div class="uk-child-width-1-2@m uk-grid-small" uk-grid>
+			<div class="uk-width-1-3">
+		        <div class="uk-card uk-card-default uk-position-relative uk-cover-container uk-card-hover border-rounded uk-height-medium">
+		            <div class="uk-card-media-top">
+		            	<canvas id="canvas-image" class="border-rounded"></canvas>
+		            </div>
+		        </div>
+		        <div class="uk-padding-small uk-text-center">
+		            <h4 class="uk-h4 uk-margin-remove uk-text-capitalize">Elisante Ephraim</h4>
+		            <p class="uk-text-muted uk-margin-remove">President</p>
+		            <ul class="uk-list uk-list-large">
+			            <li><span uk-icon="phone"></span> +255 764 339 147</li>
+			            <li><span uk-icon="mail"></span> president@bfatanzania.org</li>
+			        </ul>
+		            <ul class="uk-iconnav uk-flex-center uk-flex-middle">
+						<li><a href="#" uk-icon="icon: facebook"></a></li>
+						<li><a href="#" uk-icon="icon: instagram"></a></li>
+						<li><a href="#" uk-icon="icon: twitter"></a></li>
+						<li><a href="#" uk-icon="icon: linkedin"></a></li>
+					</ul>
+					<ul class="uk-list uk-list-large">
+						<li>
+							<a class="uk-flex uk-flex-row-reverse uk-flex-middle uk-flex-center" uk-icon="file-pdf">&ensp;View Résumé</a>
+						</li>
+					</ul>
+		        </div>
+		    </div>
+		    <div class="uk-width-2-3">
+		    	<p class="uk-dropcap">
+		    		As a young visionary leader, Elisante Ephraim serves as the President of Builders Of Future Africa of
+					which he began since September 2017 and formerly served as a President of the BHA(Children’s
+					support foundation) in the year of 2016/2017.
+					<hr>
+					He is also a CEO &amp; Director General at Africamoja Youth Society a role which he assumed early January
+					2019. Before his appointment, Elisante was Director General leading all Africamoja activities in
+					Tanzania.
+					<hr>
+					As a prominent leader of the 21st Century, Elisante feels indebted to keep serving the community and
+					thrive for prosperity and positive influence. Out of Africamoja, Elisante is pursued his Bachelor degree in
+					Economics and statistics from the University of Dar Es Salaam. He currently mentors and provides
+					financial consultation to Millennials who are passionate about Economic leadership and Entrepreneurship.
+					<hr>
+					As an inspiring Public figure, Elisante holds exceptional skills in leadership and Project management
+					where he holds significant academics and leadership recognition. He believes in capacity building,
+					mentorship, hardworking, integrity and favored to work with millennials.
+					<hr>
+					Elisante also sits as President of Dar es salaam University Economics Association (Economists’ support
+					foundation) and works with Tukutane Porini safaris as a planning and operation officer.
+		    	</p>
+		    	<h3 class="uk-h3 uk-text-capitalize">Contact Elisante Ephraim Directly</h3>
+		        <form>
+					<div class="uk-grid-small uk-grid-match uk-child-width-1-2@s" uk-grid>
+					    <div class="">
+					        <div class="uk-inline">
+					            <span class="uk-form-icon" uk-icon="icon: user"></span>
+					            <input class="uk-input" type="text" placeholder="Name">
+					        </div>
+					    </div>
+					    <div class="">
+					        <div class="uk-inline">
+					            <span class="uk-form-icon" uk-icon="icon: mail"></span>
+					            <input class="uk-input" type="text" placeholder="Email">
+					        </div>
+					    </div>
+					</div>
+					    <div class="uk-margin">
+				            <textarea class="uk-textarea" rows="5" style="resize:none;" placeholder="Write your message"></textarea>
+				        </div>
+				        <button class="uk-button uk-button-primary">Send</button>
+				</form>
+		    </div>
+		</div>
+	</div>
+</div>
+
+<script>
+	$(document).ready(function() {
+		var granim = "#834d9b,#d04ed6,#1cd8d2,#93edc7";
+		granim = granim.split(',');
+		var gradients = [];
+		var opacity = [1,1];
+		var len = granim.length;
+	      if ( len > 0 ) {
+	        if ( granim[0].indexOf('-') > -1 ) {
+	          for (var i = 0; i < len; i++) {
+	            gradients[i] = granim[i].split('-');
+	          }
+
+	          for (var i = 0; i < gradients[0].length; i++) {
+	            opacity[i] = 1;
+	          }
+	        }
+	        else {
+	          for (var i = 0; i < len/2; i++) {
+	            gradients[i] = [granim[i*2], granim[i*2+1]];
+	          }
+	        }
+	      }
+			var granimInstance = new Granim({
+			    element: '#canvas-image',
+			    direction: 'left-right',
+			    isPausedWhenNotInView: true,
+			    opacity: opacity,
+			    image : {
+			        source: '../img/6.jpg',
+			        blendingMode: 'multiply',
+					position: ['center', 'center'],
+			 	    stretchMode: ['stretch-if-bigger', 'stretch-if-bigger'],
+			    },
+			    states : {
+			        "default-state": {
+			            gradients: gradients,
+			            transitionSpeed: 5000,
+						loop: true
+			        }
+			    }
+			});
+	});
+</script>

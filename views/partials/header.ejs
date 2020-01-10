@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en" class="no-js">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- jquery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<!-- UIkit CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/css/uikit.min.css">
+	<!-- UIkit JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit-icons.min.js"></script>
+	<!-- fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Comfortaa|PT+Sans&display=swap" rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'> -->
+	<!--  -->
+	<script src="/js/modernizr.js"></script> <!-- Modernizr -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/js-signals/1.0.0/js-signals.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/hasher/1.2.0/hasher.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/crossroads/0.12.2/crossroads.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/inorganik/countUp.js/dist/countUp.js" type="module"></script>
+	<!-- <script src="js/demo.js" type="module" defer></script> -->
+	<!-- <script src="js/countUp-jquery.js" defer></script> -->
+	<script src="https://unpkg.com/onscreen/dist/on-screen.umd.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/sarcadass/granim.js@latest/dist/granim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/gh/cowboy/jquery-throttle-debounce/jquery.ba-throttle-debounce.min.js">
+	</script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css">
+	<link rel="stylesheet" href="/css/main.css">
+	<title>BFA Tanzania. Builders For Future Africa. bfatanzania.org</title>
+	<style>
+	</style>
+</head>
+
+<body>
+	<div uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container;" style="z-index: 999999;">
+		<nav style="border-bottom: 1px solid #e0e0e0;" class="uk-navbar-container uk-display-block bg-white"
+			uk-navbar="dropbar: true; delay-hide: 500;">
+			<div class="uk-container uk-container-expand">
+				<div class="uk-grid uk-margin-remove-left" uk-navbar>
+					<ul id="logo" class="uk-navbar-nav">
+						<li class="uk-active"><a href="/"><img style="height:58px;" src="/img/logo.png"></a></li>
+					</ul>
+					<ul class="uk-navbar-nav uk-navbar-right uk-flex-right" style="width:100%;">
+						<li class="uk-active">
+							<a href="#">About Us</a>
+							<div class="uk-navbar-dropdown">
+								<ul class="uk-nav uk-navbar-dropdown-nav">
+									<li class="uk-active"><a href="#">Who We Are</a></li>
+									<li><a href="#">Impacts</a></li>
+									<li><a href="#">Item</a></li>
+									<li><a id="executives-team" href="/executives-team">Executives Team</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="uk-active">
+							<a href="#consultancy">Programs</a>
+							<div class="uk-navbar-dropdown">
+								<ul class="uk-nav uk-navbar-dropdown-nav">
+									<li class="uk-active"><a href="#">Outreach</a></li>
+									<li><a href="#">Saturday</a></li>
+									<li><a href="#">X-mas Gifts</a></li>
+									<li><a href="#">Girl Chapter</a></li>
+									<li><a href="#">General Gathering</a></li>
+									<li><a href="#">Fellowship</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="uk-active">
+							<a href="#">Career</a>
+							<div class="uk-navbar-dropdown">
+								<ul class="uk-nav uk-navbar-dropdown-nav">
+									<li class="uk-active">
+										<a href="#">Jobs</a>
+									</li>
+									<li><a href="#">Internship</a></li>
+									<li><a href="#">Volunteering</a></li>
+								</ul>
+							</div>
+						</li>
+						<li class="uk-active"><button id="fixed- button" type="button" style="min-height:auto;"
+								class="uk-button uk-button-primary" uk-toggle="target: #join-modal">Join Us</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</div> <!-- .cd-main-header -->

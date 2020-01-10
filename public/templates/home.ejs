@@ -1,0 +1,465 @@
+<style>
+	.header {
+		position: relative;
+		text-align: center;
+		background: linear-gradient(60deg, rgba(183, 58, 75, 1) 0%, rgba(220, 20, 60, 1) 100%);
+		color: white;
+	}
+
+	.logo {
+		width: 50px;
+		fill: white;
+		padding-right: 15px;
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.inner-header {
+		height: 65vh;
+		width: 100%;
+		margin: 0;
+		padding: 0;
+	}
+
+	.flex {
+		/*Flexbox for containers*/
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+
+	.waves {
+		position: relative;
+		width: 100%;
+		height: 15vh;
+		margin-bottom: -7px;
+		/*Fix for safari gap*/
+		min-height: 100px;
+		max-height: 150px;
+	}
+
+	.content {
+		position: relative;
+		height: 20vh;
+		text-align: center;
+		background-color: white;
+	}
+
+	/* Animation */
+	.parallax>use {
+		animation: move-forever 25s cubic-bezier(.55, .5, .45, .5) infinite;
+	}
+
+	.parallax>use:nth-child(1) {
+		animation-delay: -2s;
+		animation-duration: 7s;
+	}
+
+	.parallax>use:nth-child(2) {
+		animation-delay: -3s;
+		animation-duration: 10s;
+	}
+
+	.parallax>use:nth-child(3) {
+		animation-delay: -4s;
+		animation-duration: 13s;
+	}
+
+	.parallax>use:nth-child(4) {
+		animation-delay: -5s;
+		animation-duration: 20s;
+	}
+
+	@keyframes move-forever {
+		0% {
+			transform: translate3d(-90px, 0, 0);
+		}
+
+		100% {
+			transform: translate3d(85px, 0, 0);
+		}
+	}
+
+	/*Shrinking for mobile*/
+	@media (max-width: 768px) {
+		.waves {
+			height: 40px;
+			min-height: 40px;
+		}
+
+		.content {
+			height: 30vh;
+		}
+
+		h1 {
+			font-size: 24px;
+		}
+	}
+
+	.eapps-facebook-feed-header-top {
+		background: rgba(220, 20, 60, 0.8) !important;
+	}
+</style>
+<div class="uk-cover-container uk-height-large uk-position-relative" style="width:100%!important;">
+	<div class="uk-cover-container uk-position-relative uk-visible-toggle uk-light" style="" tabindex="-1"
+		uk-slideshow="animation:scale; autoplay:true;" uk-cover>
+		<ul class="uk-slideshow-items">
+			<li>
+				<div
+					class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-left">
+					<img src="https://source.unsplash.com/1600x1200/?refugee" alt="" uk-cover>
+				</div>
+			</li>
+			<li>
+				<div
+					class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-left">
+					<img src="https://source.unsplash.com/1600x1200/?orphan" alt="" uk-cover>
+				</div>
+			</li>
+			<li>
+				<div
+					class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-left">
+					<img src="https://source.unsplash.com/1600x1200/?ngo" alt="" uk-cover>
+				</div>
+			</li>
+			<li>
+				<div
+					class="uk-position-cover uk-animation-kenburns uk-animation-reverse uk-transform-origin-center-left">
+					<img src="https://source.unsplash.com/random" alt="" uk-cover>
+				</div>
+			</li>
+		</ul>
+		<a class="uk-position-center-left uk-position-small uk-visible@s uk-hidden-hover" href="#" uk-slidenav-previous
+			uk-slideshow-item="previous"></a>
+		<a class="uk-position-center-right uk-position-small uk-visible@s uk-hidden-hover" href="#" uk-slidenav-next
+			uk-slideshow-item="next"></a>
+	</div>
+</div>
+
+<div class="uk-section uk-section-default">
+	<div class="uk-container">
+		<!-- <h2 class="uk-h2"></h2> -->
+		<div class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid>
+			<a>
+				<div class="uk-card uk-card-default uk-card-body">
+					<h3 class="uk-card-title">Mission <%= value %></h3>
+					<p>We are aiming at building hope among Africans who have lost hope through extending the good news.
+					</p>
+				</div>
+			</a>
+			<a>
+				<div class="uk-card uk-card-default uk-card-body">
+					<h3 class="uk-card-title">Vision</h3>
+					<p>To build a prosperous Africa where the people are "livers" rather than "survivors".</p>
+				</div>
+			</a>
+			<a>
+				<div class="uk-card uk-card-default uk-card-body">
+					<h3 class="uk-card-title">Goals</h3>
+					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+				</div>
+			</a>
+		</div>
+	</div>
+</div>
+
+<div class="header">
+	<div class="uk-section">
+		<div class="uk-container">
+			<div id="wavy" class="uk-child-width-1-4@m uk-grid-small uk-grid-match" uk-grid uk-scrollspy>
+				<div>
+					<div class="uk-card uk-card-default uk-card-body">
+						<h3 class="uk-card-title">Members</h3>
+						<h2 class="uk-margin-remove-top" id="countup-members">300</h2>
+					</div>
+				</div>
+				<div>
+					<div class="uk-card uk-card-default uk-card-body">
+						<h3 class="uk-card-title">Beneficiaries</h3>
+						<h2 class="uk-margin-remove-top" id="countup-beneficiaries">400</h2>
+					</div>
+				</div>
+				<div>
+					<div class="uk-card uk-card-default uk-card-body">
+						<h3 class="uk-card-title">Regions</h3>
+						<h2 class="uk-margin-remove-top" id="countup-regions">5</h2>
+					</div>
+				</div>
+				<div>
+					<div class="uk-card uk-card-default uk-card-body">
+						<h3 class="uk-card-title">Chapters</h3>
+						<h2 class="uk-margin-remove-top" id="countup-chapters">5</h2>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--Waves Container-->
+	<div>
+		<svg class="waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+			viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto">
+			<defs>
+				<path id="gentle-wave" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z" />
+			</defs>
+			<g class="parallax">
+				<use xlink:href="#gentle-wave" x="48" y="0" fill="rgba(255,255,255,0.7" />
+				<use xlink:href="#gentle-wave" x="48" y="3" fill="rgba(255,255,255,0.5)" />
+				<use xlink:href="#gentle-wave" x="48" y="5" fill="rgba(255,255,255,0.3)" />
+				<use xlink:href="#gentle-wave" x="48" y="7" fill="#fff" />
+			</g>
+		</svg>
+	</div>
+</div>
+
+<!-- <div class="uk-section uk-section-default">
+	<div class="uk-height-large uk-position-relative uk-visible-toggle uk-light" tabindex="-1" uk-slider="clsActivated: uk-transition-active; center: true">
+	    <ul class="uk-slider-items uk-grid uk-grid-match" uk-height-viewport="min-height: 300">
+	        <li class="uk-width-3-4">
+	            <div class="uk-height-large uk-panel" data-scrim-bottom="5">
+	                <img src="https://source.unsplash.com/random" alt="">
+	                <div class="uk-position-cover"></div>
+	                <div class="uk-overlay uk-position-bottom uk-text-center uk-transition-slide-bottom">
+	                    <h3 class="uk-margin-remove">Bottom</h3>
+	                    <p class="uk-margin-remove">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+	                </div>
+	            </div>
+	        </li>
+	        <li class="uk-width-3-4">
+	            <div class="uk-height-large uk-panel" data-scrim-bottom="5">
+	                <img src="https://source.unsplash.com/random" alt="">
+	                <div class="uk-overlay-default uk-position-cover"></div>
+	                <div class="uk-overlay uk-position-bottom uk-text-center uk-transition-slide-bottom">
+	                    <h3 class="uk-margin-remove">Bottom</h3>
+	                    <p class="uk-margin-remove">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+	                </div>
+	            </div>
+	        </li>
+	        <li class="uk-width-3-4">
+	            <div class="uk-height-large uk-panel" data-scrim-bottom="5">
+	                <img src="https://source.unsplash.com/random" alt="">
+	                <div class="uk-overlay-default uk-position-cover"></div>
+	                <div class="uk-overlay uk-position-bottom uk-text-center uk-transition-slide-bottom">
+	                    <h3 class="uk-margin-remove">Bottom</h3>
+	                    <p class="uk-margin-remove">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+	                </div>
+	            </div>
+	        </li>
+	        <li class="uk-width-3-4">
+	            <div class="uk-height-large uk-panel" data-scrim-bottom="5">
+	                <img src="https://source.unsplash.com/random" alt="">
+	                <div class="uk-overlay-default uk-position-cover"></div>
+	                <div class="uk-overlay uk-position-bottom uk-text-center uk-transition-slide-bottom">
+	                    <h3 class="uk-margin-remove">Bottom</h3>
+	                    <p class="uk-margin-remove">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+	                </div>
+	            </div>
+	        </li>
+	        <li class="uk-width-3-4">
+	            <div class="uk-height-large uk-panel" data-scrim-bottom="5">
+	                <img src="https://source.unsplash.com/random" alt="">
+	                <div class="uk-overlay-default uk-position-cover"></div>
+	                <div class="uk-overlay uk-position-bottom uk-text-center uk-transition-slide-bottom">
+	                    <h3 class="uk-margin-remove">Bottom</h3>
+	                    <p class="uk-margin-remove">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+	                </div>
+	            </div>
+	        </li>
+	    </ul>
+	    <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slider-item="previous"></a>
+	    <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slider-item="next"></a>
+	</div>
+</div> -->
+
+<div class="uk-section uk-section-default">
+	<div uk-slider="center: true; autoplay: true;">
+		<div class="uk-position-relative uk-visible-toggle uk-dark" tabindex="-1">
+			<ul class="uk-slider-items uk-child-width-1-1 uk-grid">
+				<li>
+					<div class="uk-container">
+						<div class="uk-card-body">
+							<h3 class="uk-card-title">Elisante Ephraim</h3>
+							<h3 class="uk-card-title">BFA President</h3>
+							<p>It is the most beautiful thing to be a child, everyone admires so, but it's unfortunate
+								that some are deprived of this feeling. Their childhood has been stolen and I am Happy
+								and Firm to offer it back to them!</p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="uk-container">
+						<div class="uk-card-body">
+							<h3 class="uk-card-title">Brendah Mgallah</h3>
+							<h3 class="uk-card-title">BFA vice President</h3>
+							<p>I have found out that there is no joy greater than that of serving people and giving back
+								to the community .More so putting a smile on a kid’s face. I am so passionate about this
+								vision and we will work tirelessly to keep the BFA flag held high. Long live BFA!</p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="uk-container">
+						<div class="uk-card-body">
+							<h3 class="uk-card-title">Barnabas S. Mnyasi</h3>
+							<h3 class="uk-card-title">BFA General Secretary</h3>
+							<p>We have come in this world to learn how to give and receive love ,am practicing my love
+								by serving in BFA it is one of my life mission.</p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="uk-container">
+						<div class="uk-card-body">
+							<h3 class="uk-card-title">Elizabeth Njau</h3>
+							<h3 class="uk-card-title">BFA Treasurer</h3>
+							<p>It has been a privilege to work with BFA, knowing that we are the ones to make a better
+								day and bring hope to African kids. I believe the mission and vision we have will really
+								bring a bright future for our kids. Glory to God!</p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="uk-container">
+						<div class="uk-card-body">
+							<h3 class="uk-card-title">Elpidius Mlokozi</h3>
+							<h3 class="uk-card-title">BFA Treasurer</h3>
+							<p>Am not regretting to serve this vision and I give all of my time, energy and mind on
+								betterment of this vision as to WHOM MUCH IS GIVEN MUCH IS EXPECTED</p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="uk-container">
+						<div class="uk-card-body">
+							<h3 class="uk-card-title">Linda Edward</h3>
+							<h3 class="uk-card-title">BFA Regional coordinator</h3>
+							<p>Serving BFA is the way of extending my heartfelt charity to the young generation who are
+								in needs proudly to serve BFA because it makes me becoming strong and bring much
+								happiness, with love we will achieve</p>
+						</div>
+					</div>
+				</li>
+				<li>
+					<div class="uk-container">
+						<div class="uk-card-body">
+							<h3 class="uk-card-title">Loserian Mollel</h3>
+							<h3 class="uk-card-title">BFA Mobilizer</h3>
+							<p>I'm called to offer my time to this Godly ministry, Here am I lord use me accordingly,
+								I'm ready.</p>
+						</div>
+					</div>
+				</li>
+			</ul>
+			<a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous
+				uk-slider-item="previous"></a>
+			<a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next
+				uk-slider-item="next"></a>
+		</div>
+		<ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin"></ul>
+	</div>
+</div>
+
+<div class="uk-container">
+	<div class="uk-cover-container border-rounded uk-height-large uk-overflow-hidden uk-light uk-flex uk-flex-top uk-padding-small"
+		data-overlay="5">
+		<iframe
+			src="https://www.youtube.com/embed/LoAT1GGBeGs?start=80&amp;autoplay=1&amp;controls=0&amp;showinfo=0&amp;rel=0&amp;loop=1&amp;modestbranding=1&amp;wmode=transparent"
+			width="1280" height="720" frameborder="0" allowfullscreen uk-cover></iframe>
+		<div class="uk-width-1-2@m uk-text-center uk-margin-auto uk-margin-auto-vertical uk-position-z-index">
+			<div uk-parallax="opacity: 0,1; y: 100,0; scale: 0.5,1; viewport: 0.3;">
+				<h1 class="uk-h2">Our YouTube Channel</h1>
+				<p class="uk-h4">Subscribe to our YouTube channel to watch videos of our events and activities.</p>
+				<button class="uk-button uk-button-large uk-button-default">YouTube Channel</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="uk-section uk-section-default uk-padding-remove-bottom">
+	<!-- Facebook Widget -->
+	<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+	<div class="elfsight-app-b3832b6e-2601-4572-82cb-db1989261c70"></div>
+	<div style="position: relative; top: -48px; z-index: 99999; background-color: #fff; height:45px;"></div>
+</div>
+
+<!-- <div>
+	<div class="uk-height-1-1 uk-position-relative uk-visible-toggle" tabindex="-1" uk-slideshow="animation: push">
+					    <ul class="uk-slideshow-items uk-height-1-1">
+					        <li>
+					            <img src="https://source.unsplash.com/random" alt="" uk-cover>
+					            <div class="uk-overlay uk-overlay-default uk-position-center uk-position-small uk-text-center">
+					                <h2 class="uk-margin-remove">Center</h2>
+					                <p class="uk-margin-remove">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+					            </div>
+					        </li>
+					        <li>
+					            <img src="https://source.unsplash.com/random" alt="" uk-cover>
+					            <div class="uk-position-cover uk-position-medium uk-text-center uk-light">
+					                <h3 class="uk-margin-remove">Bottom</h3>
+					                <p class="uk-margin-remove">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+					            </div>
+					        </li>
+					        <li>
+					            <img src="https://source.unsplash.com/random" alt="" uk-cover>
+					            <div class="uk-overlay uk-overlay-primary uk-position-cover uk-text-center">
+					                <h3 class="uk-margin-remove">Overlay Bottom</h3>
+					                <p class="uk-margin-remove">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+					            </div>
+					        </li>
+					        <li>
+					            <img src="https://source.unsplash.com/random" alt="" uk-cover>
+					            <div class="uk-overlay uk-overlay-default uk-position-bottom-right uk-position-small">
+					                <h3 class="uk-margin-remove">Overlay Bottom Right</h3>
+					                <p class="uk-margin-remove">Lorem ipsum dolor sit amet.</p>
+					            </div>
+					        </li>
+					    </ul>
+
+					    <div class="uk-light">
+					        <a class="uk-position-center-left uk-position-small uk-hidden-hover" href="#" uk-slidenav-previous uk-slideshow-item="previous"></a>
+					        <a class="uk-position-center-right uk-position-small uk-hidden-hover" href="#" uk-slidenav-next uk-slideshow-item="next"></a>
+					    </div>
+					</div>
+</div> -->
+
+<div class="uk-section-default">
+	<div class="uk-section uk-light uk-background-cover"
+		style="background-image: url('https://source.unsplash.com/1600x1200/?humans')">
+		<div class="uk-container">
+			<h3>Section with Images</h3>
+			<div class="uk-grid-match uk-child-width-1-3@m" uk-grid>
+				<div>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+				</div>
+				<div>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+				</div>
+				<div>
+					<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+<script type="module">
+	import { CountUp } from 'https://cdn.jsdelivr.net/gh/inorganik/countUp.js/dist/countUp.js';
+	$(document).ready(function() {
+		var os = new OnScreen();
+		os.on('enter', '#wavy', $.debounce(350, function(element, event) {
+		    // element.style.color = 'red';
+		    var countUp1 = new CountUp('countup-members', 300);
+			var countUp2 = new CountUp('countup-beneficiaries', 400);
+			var countUp3 = new CountUp('countup-regions', 5);
+			var countUp4 = new CountUp('countup-chapters', 5);
+			countUp1.start();
+			countUp2.start();
+			countUp3.start();
+			countUp4.start();
+		}));
+	});
+
+</script>
+<script>
+	$(document).ready(function () {});
+</script>

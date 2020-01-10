@@ -1,0 +1,145 @@
+<a href="#" class="uk-button uk-button-link uk-icon tm-back"><span uk-icon="icon: chevron-left; "></span>Back</a>
+
+<h2 class="uk-h3 uk-margin-small-top">New Executive</h2>
+<ul class="uk-breadcrumb uk-margin-remove-top uk-margin-medium-bottom">
+    <li><a href="#articles">Executives</a></li>
+    <li class="uk-disabled"><a href="#">New Executive</a></li>
+</ul>
+<form class="uk-form-stacked">
+	<div class="">
+		<label for="file-input" class="uk-card uk-card-default uk-height-medium uk-display-block uk-width-medium" data-cropzee="file-input"></label>
+		<div class="uk-margin">
+	        <div uk-form-custom>
+	            <input id="file-input" type="file">
+	            <button class="uk-button uk-button-default" type="button" tabindex="-1">Add Photo</button>
+	            <div id="file-input-button" class="uk-width-1-1 uk-height-1-1 uk-position-absolute uk-position-z-index uk-position-top-left cursor-pointer"></div>
+	        </div>
+	    </div>
+	</div>
+
+	<div class="uk-child-width-expand@s uk-margin-medium-top" uk-grid>
+		<div>
+			<div class="uk-margins">
+				<label class="uk-form-label">First Name</label>
+				<div class="uk-form-controls">
+					<input class="uk-input" type="text" placeholder="First Name">
+				</div>
+			</div>
+		</div>
+		<div>
+			<div class="uk-margins">
+				<label class="uk-form-label">Middle Name</label>
+				<div class="uk-form-controls">
+					<input class="uk-input" type="text" placeholder="Middle Name">
+				</div>
+			</div>
+		</div>
+		<div>
+			<div class="uk-margins">
+				<label class="uk-form-label">Last Name</label>
+				<div class="uk-form-controls">
+					<input class="uk-input" type="text" placeholder="Last Name">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="uk-child-width-expand@s uk-margin-medium-top" uk-grid>
+		<div>
+			<div class="uk-margins">
+				<label class="uk-form-label">Title</label>
+				<div class="uk-form-controls">
+					<input class="uk-input" type="text" placeholder="Title">
+				</div>
+			</div>
+		</div>
+		<div>
+			<div class="uk-margins">
+				<label for="resume-input" class="uk-form-label">Resume</label>
+		        <div uk-form-custom>
+		            <input id="resume-input" type="file">
+		            <button class="uk-button uk-button-default" type="button" tabindex="-1">Upload Resume</button>
+		            <label for="resume-input" class="uk-width-1-1 uk-height-1-1 uk-position-absolute uk-position-z-index uk-position-top-left cursor-pointer"></label>
+		        </div>
+		    </div>
+		</div>
+	</div>
+
+	<div class="uk-child-width-expand@s uk-margin-medium-top" uk-grid>
+		<div>
+			<div class="uk-margins">
+				<label class="uk-form-label">Phone</label>
+				<div class="uk-form-controls">
+					<input class="uk-input" type="tel" placeholder="Phone">
+				</div>
+			</div>
+		</div>
+		<div>
+			<div class="uk-margins">
+				<label class="uk-form-label">Email</label>
+				<div class="uk-form-controls">
+					<input class="uk-input" type="text" placeholder="Email">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="uk-child-width-expand@s uk-margin-medium-top" uk-grid>
+		<div>
+			<div class="uk-margins">
+				<label class="uk-form-label">Bio</label>
+				<div class="uk-form-controls">
+					<textarea class="uk-textarea" rows="8" placeholder="Bio"></textarea>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<h4 class="uk-h4 uk-margin-remove-bottom">Social Media</h4>
+	<div class="uk-child-width-expand@s" uk-grid>
+		<div>
+			<div class="uk-margins">
+				<label class="uk-form-label">Platform</label>
+				<div class="uk-form-controls">
+					<input class="uk-input" type="text" placeholder="Platform">
+				</div>
+			</div>
+		</div>
+		<div>
+			<div class="uk-margins">
+				<label class="uk-form-label">Username/ID</label>
+				<div class="uk-form-controls">
+					<input class="uk-input" type="text" placeholder="Username">
+				</div>
+			</div>
+		</div>
+	</div>
+	<p class="uk-text-right">
+		<button onclick="addSocial(this);" class="uk-button uk-button-default">Add <span uk-icon="icon: plus; ratio: 0.8"></span></button>
+	</p>
+
+	<div class="uk-margin-large-bottom"><br /></div>
+
+    <div class="footer-buttons">
+		<div class="footer-padding">
+			<button type="submit" onclick="alert($('#dates-select').val());" class="uk-button uk-button-primary uk-icon uk-align-right uk-margin-remove-bottom"><span uk-icon="icon: check; "></span> Publish</button>
+		</div>
+	</div>
+</form>
+
+<script>
+	$(document).ready(function(){
+		$('#dates-select').select2({
+			tags: true,
+		});
+		$("#file-input-button").click(function() {
+			$("#file-input").trigger('click');
+		});
+		$("#file-input").cropzee();
+	});
+	function addSocial(obj) {
+		var $social = $(obj).closest('p').prev('div').first().clone();
+		// alert(JSON.stringify($social));
+		$(obj).closest('p').prev('div').first().after($social);
+	}
+</script>
