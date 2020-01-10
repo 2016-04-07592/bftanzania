@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en" class="no-js">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/js-signals/1.0.0/js-signals.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/hasher/1.2.0/hasher.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/crossroads/0.12.2/crossroads.min.js"></script>
+
+	<link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="../../../css/theme.css"> <!-- Resource style -->
+	<link rel="stylesheet" href="../../../css/nav.css"> <!-- CSS reset -->
+	<link rel="stylesheet" href="../../../css/style.css"> <!-- Resource style -->
+	<link rel="stylesheet" href="../../../css/main.css">
+	<script src="/js/modernizr.js"></script> <!-- Modernizr -->
+	<!-- jquery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<!-- UIkit JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit-icons.min.js"></script>\
+	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.js"></script>
+	<link rel="stylesheet" type="text/css"
+		href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" />
+	<script src="https://cdn.jsdelivr.net/gh/BossBele/cropzee/dist/cropzee.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.1/js/select2.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.7/css/select2.min.css">
+	<title>BFA. Admin</title>
+</head>
+
+<body>
+	<header class="cd-main-header">
+		<a href="#" class="cd-logo">
+			BFA
+		</a>
+		<!-- <div class="cd-search is-hidden">
+			<form action="#0">
+				<input type="search" placeholder="Search...">
+			</form>
+		</div> -->
+		<!-- cd-search -->
+		<a href="#" class="cd-nav-trigger"><span></span></a>
+		<nav class="cd-nav">
+			<ul class="cd-top-nav">
+				<!-- <li><a href="#events/calendar">Tour</a></li>
+				<li><a href="#articles/comments">Support</a></li> -->
+				<li class="has-children account">
+					<a href="#">
+						<img src="img/cd-avatar.png" alt="avatar">
+						Account
+					</a>
+					<ul>
+						<!-- <li><a href="#">My Account</a></li> -->
+						<!-- <li><a href="#">Edit Account</a></li> -->
+						<li><a href="#">Logout</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</header> <!-- .cd-main-header -->
+
+	<main class="cd-main-content">
+		<nav class="cd-side-nav">
+			<ul class="uk-nav uk-nav-default">
+				<li class="cd-label">Main</li>
+				<li class="has-children bookmarks">
+					<a href="#">Executives</a>
+					<ul>
+						<li><a href="/admin/dashboard/add">Add Executive Profiles</a></li>
+						<li><a href="/admin/dashboard/edit">Edit/Delete Executive Profiles</a></li>
+					</ul>
+				</li>
+			</ul>
+		</nav>

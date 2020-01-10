@@ -1,0 +1,62 @@
+<%- include ("partials/header.ejs") %>
+
+<div class="content-wrapper">
+	<!-- Page Content -->
+	<div id="page-content-wrapper uk-margin-top">
+
+		<div class="uk-container uk-container-expand uk-padding-remove-horizontal" id="content">
+			<%- include ("partials/home.ejs") %>
+		</div>
+	</div>
+	<!-- /#page-content-wrapper -->
+</div> <!-- .content-wrapper -->
+</main> <!-- .cd-main-content -->
+<script src="/js/jquery.menu-aim.js"></script>
+<script src="/js/main.js"></script> <!-- Resource jQuery -->
+
+<script>
+	function get_content(tpl, div) {
+		$.get(tpl, function (result) {
+			$result = $(result);
+
+			$(div).html(result);
+			$result.find('script').appendTo(div);
+		}, 'html');
+
+	}
+	crossroads.addRoute('/{section}/{subsection}', function (section, subsection) {
+		get_content('templates/' + section + '/' + subsection + '.html', '#content');
+	});
+	crossroads.addRoute('/', function (id) {
+		get_content('templates/home.html', '#content');
+	});
+
+	//setup hasher
+	function parseHash(newHash, oldHash) {
+		crossroads.parse(newHash);
+	}
+	hasher.initialized.add(parseHash); //parse initial hash
+	hasher.changed.add(parseHash); //parse hash changes
+	hasher.init(); //start listening for history change
+
+	(function ($) {
+		var $window = $(window),
+			$html = $('#wrapper');
+
+		function resize() {
+			if ($window.width() < 768) {
+				return $html.removeClass('toggled');
+			}
+
+			$html.addClass('toggled');
+		}
+
+		$window
+			.resize(resize)
+			.trigger('resize');
+	})(jQuery);
+</script>
+
+</body>
+
+</html>

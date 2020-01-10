@@ -35,7 +35,7 @@ router.get('/executives-profile/:id', function (req, res, next) {
     );
 
 
-})
+});
 
 
 module.exports = router;

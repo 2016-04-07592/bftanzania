@@ -1,0 +1,162 @@
+<a href="/admin/dashboard/" class="uk-button uk-button-link uk-icon tm-back"><span
+        uk-icon="icon: chevron-left; "></span>Back</a>
+
+<div class="uk-child-width-expand@s uk-margin-small-top uk-flex-top" uk-grid>
+    <div>
+
+        <div class="uk-flex uk-flex-wrap ">
+            <div class="uk-width-1-1">
+                <h2 class="uk-h3">Manage Executives</h2>
+            </div>
+            <div class="uk-width-1-1">
+                <ul class="uk-breadcrumb">
+                    <li><a href="#">Home</a></li>
+                    <li class="uk-disabled"><a href="#">Executives</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <br />
+    <br />
+    <div>
+
+    </div>
+</div>
+
+<div class="uk-child-width-expand@s uk-margin-small-top uk-flex-middle" uk-grid>
+
+    <div class="uk-width-expand">
+        <div class="uk-child-width-expand@s" uk-grid>
+            <div class="uk-button-group uk-width-auto">
+                <div class="uk-inline">
+                    <button class="uk-button uk-button-default" type="button"><span
+                            uk-icon="icon: list"></span>&ensp;<span id="selected-articles-status">All</span></button>
+                    <div uk-dropdown="mode: click">
+                        <ul class="uk-nav uk-dropdown-nav">
+                            <li class="uk-active" onclick="selectStatus(this)"><a href="#" data-unlink>All</a></li>
+                            <li onclick="selectStatus(this)"><a href="#" data-unlink>Published</a></li>
+                            <li onclick="selectStatus(this)"><a href="#" data-unlink>Draft</a></li>
+                            <li onclick="selectStatus(this)"><a href="#" data-unlink>Trash</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-width-expand">
+                <form class="uk-search uk-search-default uk-width-5-6">
+                    <span uk-search-icon></span>
+                    <input class="uk-search-input uk-flex-wrap-stretch" id="search" type="search"
+                        placeholder="Search...">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="uk-width-auto">
+        <a href="#articles/new">
+            <button class="uk-button uk-button-primary uk-icon uk-align-right uk-margin-auto-vertical"><span
+                    uk-icon="icon: plus; "></span> New article</button>
+        </a>
+    </div>
+
+
+</div>
+<hr class="uk-divider-icon">
+
+<table class="uk-table uk-table-striped uk-table-hover uk-table-responsive">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Middle Name</th>
+            <th>Last Name</th>
+            <th>Title</th>
+            <th>Photo</th>
+            <th>Resume</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Bio</th>
+            <th>Socials</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Elisante</td>
+            <td>John</td>
+            <td>Ephraim</td>
+            <td>President</td>
+            <td>dp.jpg</td>
+            <td>cv.pdf</td>
+            <td>+255764339147</td>
+            <td>president@bfatanzania.org</td>
+            <td class="uk-text-truncate">As a young visionary leader, Elisante Ephraim serves as the President of
+                Builders Of Future Africa of
+                which he began since September 2017 and formerly served as a President of the BHA(Children’s
+                support foundation) in the year of 2016/2017.
+                &lt;br&gt;
+                He is also a CEO &amp; Director General at Africamoja Youth Society a role which he assumed early
+                January
+                2019. Before his appointment, Elisante was Director General leading all Africamoja activities in
+                Tanzania.
+                &lt;br&gt;
+                As a prominent leader of the 21st Century, Elisante feels indebted to keep serving the community and
+                thrive for prosperity and positive influence. Out of Africamoja, Elisante is pursued his Bachelor degree
+                in
+                Economics and statistics from the University of Dar Es Salaam. He currently mentors and provides
+                financial consultation to Millennials who are passionate about Economic leadership and Entrepreneurship.
+                &lt;br&gt;
+                As an inspiring Public figure, Elisante holds exceptional skills in leadership and Project management
+                where he holds significant academics and leadership recognition. He believes in capacity building,
+                mentorship, hardworking, integrity and favored to work with millennials.
+                &lt;br&gt;
+                Elisante also sits as President of Dar es salaam University Economics Association (Economists’ support
+                foundation) and works with Tukutane Porini safaris as a planning and operation officer.
+            </td>
+            <td>
+                <ul class="uk-iconnav">
+                    <li><a href="#" uk-icon="icon: facebook"></a> elisante_prezzo</li>
+                    <li><a href="#" uk-icon="icon: instagram"></a> bfa_prezzo</li>
+                </ul>
+            </td>
+            <td>
+                <button class="uk-button uk-button-default uk-button-small" type="button">Edit <span
+                        uk-icon="icon: file-edit; ratio: 0.8"></span></button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<ul class="uk-pagination uk-flex-center uk-margin-medium-top" uk-margin>
+    <li><a href="#"><span uk-pagination-previous></span></a></li>
+    <li class="uk-active"><a href="#">1</a></li>
+    <li class="uk-disabled"><span>...</span></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">6</a></li>
+    <li><span>7</span></li>
+    <li><a href="#">8</a></li>
+    <li><a href="#"><span uk-pagination-next></span></a></li>
+</ul>
+
+<script>
+    $("#search").keyup(function () {
+        var value = this.value.toLowerCase().trim();
+
+        $("table").find("tr").each(function (index) {
+            if (!index) return;
+            var id = $(this).find("td").first().text();
+            id = id.toLowerCase().trim();
+            $(this).toggle(id.indexOf(value) !== -1);
+        });
+    });
+
+    function selectStatus(obj) {
+        $(obj).siblings().removeClass("uk-active");
+        var text = $(obj).find("a").text();
+        $(obj).addClass("uk-active");
+        $("#selected-articles-status").text(text);
+    }
+    $(document).ready(function () {
+        $("[data-unlink]").click(function (e) {
+            e.preventDefault();
+        });
+    });
+</script>
