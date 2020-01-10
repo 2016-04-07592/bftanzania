@@ -18,7 +18,7 @@ const indexRoute = require('./routes/routes');
 //routes_app
 app.use('/', indexRoute);
 
-const server = 4000;
+const server = process.env.PORT ||4000;
 app.listen(server, () => {
     console.log(`Server running ....., On Port ${server}`)
 });
