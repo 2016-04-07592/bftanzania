@@ -79,48 +79,43 @@
         </tr>
     </thead>
     <tbody>
+        <% for(var j = 0; j < executives.length; j++) { %>
         <tr>
-            <td>Elisante</td>
-            <td>John</td>
-            <td>Ephraim</td>
-            <td>President</td>
-            <td>dp.jpg</td>
-            <td>cv.pdf</td>
-            <td>+255764339147</td>
-            <td>president@bfatanzania.org</td>
-            <td class="uk-text-truncate">As a young visionary leader, Elisante Ephraim serves as the President of
-                Builders Of Future Africa of
-                which he began since September 2017 and formerly served as a President of the BHA(Children’s
-                support foundation) in the year of 2016/2017.
-                &lt;br&gt;
-                He is also a CEO &amp; Director General at Africamoja Youth Society a role which he assumed early
-                January
-                2019. Before his appointment, Elisante was Director General leading all Africamoja activities in
-                Tanzania.
-                &lt;br&gt;
-                As a prominent leader of the 21st Century, Elisante feels indebted to keep serving the community and
-                thrive for prosperity and positive influence. Out of Africamoja, Elisante is pursued his Bachelor degree
-                in
-                Economics and statistics from the University of Dar Es Salaam. He currently mentors and provides
-                financial consultation to Millennials who are passionate about Economic leadership and Entrepreneurship.
-                &lt;br&gt;
-                As an inspiring Public figure, Elisante holds exceptional skills in leadership and Project management
-                where he holds significant academics and leadership recognition. He believes in capacity building,
-                mentorship, hardworking, integrity and favored to work with millennials.
-                &lt;br&gt;
-                Elisante also sits as President of Dar es salaam University Economics Association (Economists’ support
-                foundation) and works with Tukutane Porini safaris as a planning and operation officer.
+            <td><%= executives[j].first_name %></td>
+            <td><%= executives[j].middle_name %></td>
+            <td><%= executives[j].last_name %></td>
+            <td><%= executives[j].title %></td>
+            <td>
+                <a
+                    href="http://127.0.0.1:4000/uploads/<%= executives[j].photo.slice(15,41) %>"><%= executives[j].photo %></a>
             </td>
+            <td>
+                <a
+                    href="http://127.0.0.1:4000/uploads/<%= executives[j].resume.slice(15,41) %>"><%= executives[j].resume %></a>
+            </td>
+            <td><%= executives[j].phone %></td>
+            <td><%= executives[j].email %></td>
+            <td class="uk-text-truncate"><%= executives[j].bio %></td>
+
             <td>
                 <ul class="uk-iconnav">
-                    <li><a href="#" uk-icon="icon: facebook"></a> elisante_prezzo</li>
-                    <li><a href="#" uk-icon="icon: instagram"></a> bfa_prezzo</li>
+                    <% for(var i = 0; i < social.length; i++) { %>
+                    <%   if(executives[j].id == social[i].id) { %>
+                    <li><a href="#" uk-icon="icon: <%= social[i].social_name %>"></a> <%= social[i].username %></li>
+                    <% } %>
+                    <% } %>
                 </ul>
             </td>
+
             <td>
-                <button class="uk-button uk-button-default uk-button-small" type="button">Edit <span
-                        uk-icon="icon: file-edit; ratio: 0.8"></span></button>
+
+                <a href="/admin/<%= executives[j].id %>"><i class="fa me fa-pencil  fa " aria-hidden="true"></i></a>
+                <a href="/admin/dashboard/delete/<%= executives[j].id %>"
+                    onclick="confirm('Are you sure you want to delete this record ?');"><i class="fa me fa-trash fa "
+                        aria-hidden="true"></i></a>
+
             </td>
+            <% } %>
         </tr>
     </tbody>
 </table>

@@ -72,6 +72,30 @@
         </p>
     </div>
 </div>
+
+<!-- Join modal -->
+<div id="accepted-modal" class="uk-flex-top" uk-modal>
+    <div class="uk-modal-dialog uk-margin-auto-vertical uk-modal-body">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <h3 class="uk-h3">Join Us</h3>
+        <p class="uk-text-bold uk-text-left">
+            Request Accepted, We will Come back to you soon...
+        </p>
+    </div>
+</div>
+
+
+<!-- sent modal -->
+<div id="sent-modal" class="uk-flex-top" uk-modal>
+    <div class="uk-modal-dialog uk-margin-auto-vertical uk-modal-body">
+        <button class="uk-modal-close-default" type="button" uk-close></button>
+        <h3 class="uk-h3">Message sent</h3>
+        <p class="uk-text-bold uk-text-left">
+            Your Message has been sent succesfully...
+        </p>
+    </div>
+</div>
+
 <!-- Join form modal -->
 <div id="member-join-form-modal" class="uk-modal-container uk-flex-top" uk-modal>
     <div class="uk-modal-dialog uk-margin-auto-vertical uk-modal-body">
@@ -102,13 +126,14 @@
             </div>
             <div>
                 <p>Fill in the form below to join as a member.</p>
-                <form class="uk-form-horizontal">
+                <form class="uk-form-horizontal" action="/admin/dashboard/member_req" method="POST"
+                    enctype="application/json">
                     <div class="uk-margin">
                         <label class="uk-form-label">Name</label>
                         <div class="uk-form-controls">
                             <div class="uk-width-1-1 uk-inline">
                                 <span class="uk-form-icon" uk-icon="icon: user"></span>
-                                <input class="uk-input" type="text" placeholder="Name">
+                                <input class="uk-input" type="text" placeholder="Name" name="name">
                             </div>
                         </div>
                     </div>
@@ -117,7 +142,7 @@
                         <div class="uk-form-controls">
                             <div class="uk-width-1-1 uk-inline">
                                 <span class="uk-form-icon" uk-icon="icon: phone"></span>
-                                <input class="uk-input" type="tel" placeholder="Phone">
+                                <input class="uk-input" type="tel" placeholder="Phone" name="phone">
                             </div>
                         </div>
                     </div>
@@ -126,17 +151,22 @@
                         <div class="uk-form-controls">
                             <div class="uk-width-1-1 uk-inline">
                                 <span class="uk-form-icon" uk-icon="icon: mail"></span>
-                                <input class="uk-input" type="text" placeholder="Email">
+                                <input class="uk-input" type="text" placeholder="Email" name="email">
                             </div>
                         </div>
                     </div>
                     <div class="uk-margin">
                         <label class="uk-form-label">Why join us?</label>
                         <div class="uk-form-controls">
-                            <textarea class="uk-textarea" rows="5" style="resize:none;"
-                                placeholder="Why join us?"></textarea>
+                            <textarea class="uk-textarea" rows="5" style="resize:none;" placeholder="Why join us?"
+                                name="why_join"></textarea>
                         </div>
                     </div>
+                    <div class="uk-margin">
+                        <button id="fixed- button" type="submit" class="uk-button uk-button-primary"
+                            uk-toggle="target: #join-modal">Submit</button>
+                    </div>
+
                 </form>
             </div>
         </div>
@@ -152,13 +182,14 @@
             <div class=""></div>
             <div class="">
                 <p>Fill in the form below to join as a partner.</p>
-                <form class="uk-form-horizontal">
+                <form class="uk-form-horizontal" action="/admin/dashboard/partner_req" method="POST"
+                    enctype="application/json">
                     <div class="uk-margin">
                         <label class="uk-form-label">Organization</label>
                         <div class="uk-form-controls">
                             <div class="uk-width-1-1 uk-inline">
                                 <span class="uk-form-icon" uk-icon="icon: users"></span>
-                                <input class="uk-input" type="text" placeholder="Organization">
+                                <input class="uk-input" type="text" placeholder="Organization" name="name">
                             </div>
                         </div>
                     </div>
@@ -167,7 +198,7 @@
                         <div class="uk-form-controls">
                             <div class="uk-width-1-1 uk-inline">
                                 <span class="uk-form-icon" uk-icon="icon: phone"></span>
-                                <input class="uk-input" type="tel" placeholder="Phone">
+                                <input class="uk-input" type="tel" placeholder="Phone" name="phone">
                             </div>
                         </div>
                     </div>
@@ -176,7 +207,7 @@
                         <div class="uk-form-controls">
                             <div class="uk-width-1-1 uk-inline">
                                 <span class="uk-form-icon" uk-icon="icon: mail"></span>
-                                <input class="uk-input" type="text" placeholder="Email">
+                                <input class="uk-input" type="text" placeholder="Email" name="email">
                             </div>
                         </div>
                     </div>
@@ -185,19 +216,24 @@
                         <div class="uk-form-controls">
                             <div class="uk-width-1-1 uk-inline">
                                 <span class="uk-form-icon" uk-icon="icon: map"></span>
-                                <input class="uk-input" type="text" placeholder="Location">
+                                <input class="uk-input" type="text" placeholder="Location" name="location">
                             </div>
                         </div>
                     </div>
                     <div class="uk-margin">
                         <label class="uk-form-label">Program</label>
                         <div class="uk-form-controls">
-                            <select class="uk-select">
+                            <select class="uk-select" name="program">
                                 <option>Health</option>
                                 <option>Education</option>
                                 <option>Girl Chapter</option>
                             </select>
                         </div>
+                    </div>
+
+                    <div class="uk-margin">
+                        <button id="fixed- button" type="submit" class="uk-button uk-button-primary"
+                            uk-toggle="target: #join-modal">Submit</button>
                     </div>
                 </form>
             </div>
@@ -214,13 +250,14 @@
             <div class=""></div>
             <div class="">
                 <p>Fill in the form below to join as a sponsor.</p>
-                <form class="uk-form-horizontal">
+                <form class="uk-form-horizontal" action="/admin/dashboard/sponsor_req" method="POST"
+                    enctype="application/json">
                     <div class="uk-margin">
                         <label class="uk-form-label">Organization</label>
                         <div class="uk-form-controls">
                             <div class="uk-width-1-1 uk-inline">
                                 <span class="uk-form-icon" uk-icon="icon: users"></span>
-                                <input class="uk-input" type="text" placeholder="Organization">
+                                <input class="uk-input" type="text" placeholder="Organization" name="name">
                             </div>
                         </div>
                     </div>
@@ -229,7 +266,7 @@
                         <div class="uk-form-controls">
                             <div class="uk-width-1-1 uk-inline">
                                 <span class="uk-form-icon" uk-icon="icon: phone"></span>
-                                <input class="uk-input" type="tel" placeholder="Phone">
+                                <input class="uk-input" type="tel" placeholder="Phone" name="phone">
                             </div>
                         </div>
                     </div>
@@ -238,7 +275,7 @@
                         <div class="uk-form-controls">
                             <div class="uk-width-1-1 uk-inline">
                                 <span class="uk-form-icon" uk-icon="icon: mail"></span>
-                                <input class="uk-input" type="text" placeholder="Email">
+                                <input class="uk-input" type="text" placeholder="Email" name="email">
                             </div>
                         </div>
                     </div>
@@ -247,25 +284,56 @@
                         <div class="uk-form-controls">
                             <div class="uk-width-1-1 uk-inline">
                                 <span class="uk-form-icon" uk-icon="icon: map"></span>
-                                <input class="uk-input" type="text" placeholder="Location">
+                                <input class="uk-input" type="text" placeholder="Location" name="location">
                             </div>
                         </div>
                     </div>
                     <div class="uk-margin">
                         <label class="uk-form-label">Program</label>
                         <div class="uk-form-controls">
-                            <select class="uk-select">
+                            <select class="uk-select" name="program">
                                 <option>Health</option>
                                 <option>Education</option>
                                 <option>Girl Chapter</option>
                             </select>
                         </div>
                     </div>
+
+                    <div class="uk-margin">
+                        <button id="fixed- button" type="submit" class="uk-button uk-button-primary"
+                            uk-toggle="target: #join-modal">Submit</button>
+                    </div>
                 </form>
             </div>
         </div>
     </div>
 </div>
+
+<% if(accepted == "request accepted"){%>
+<script>
+    $(document).ready(function () {
+        var modal = UIkit.modal("#accepted-modal");
+        modal.show();
+    });
+</script>
+<% } %>
+<% if(sent == "request accepted"){%>
+<script>
+    $(document).ready(function () {
+        var modal = UIkit.modal("#sent-modal");
+        modal.show();
+    });
+</script>
+<% } %>
+
+<script>
+    $(document).ready(function () {
+        UIkit.scroll('#saturday', {
+            duration: 1000
+        });
+
+    });
+</script>
 <script src="/js/jquery.menu-aim.js"></script>
 <script src="/js/main.js"></script> <!-- Resource jQuery -->
 <!-- <script src="js/page.min.js"></script> -->

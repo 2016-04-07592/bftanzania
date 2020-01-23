@@ -1,0 +1,48 @@
+<table class="uk-table uk-table-striped uk-table-hover uk-table-responsive">
+    <thead>
+        <tr>
+            <th>Organization</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Location</th>
+            <th>Programme</th>
+            <th>Application Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% for(var i = 0; i < data.length; i++) { %>
+        <tr class="uk-text-bold" uk-toggle="target: #partner-modal">
+            <td><%= data[i].name_organization %></td>
+            <td><%= data[i].phone %></td>
+            <td><%= data[i].email %></td>
+            <td><%= data[i].location %></td>
+            <td><%= data[i].program %></td>
+            <td><%= moment.unix(data[i].time).format('MMMM Do YYYY, h:mm:ss a') %></td>
+        </tr>
+        <div id="partner-modal" class="uk-modal-container uk-flex-top" uk-modal>
+            <div class="uk-modal-dialog uk-margin-auto-vertical uk-modal-body">
+                <button class="uk-modal-close-default" type="button" uk-close></button>
+                <h3 class="uk-h3 uk-margin-small-top"><%= data[i].name_organization %></h3>
+                <div class="uk-margin-small">
+                    <p><%= data[i].phone %></p>
+                    <p><%= data[i].email %></p>
+                    <p><%= data[i].location %></p>
+                    <p><%= data[i].program %></p>
+                </div>
+            </div>
+        </div>
+
+        <% } %>
+    </tbody>
+</table>
+
+<ul class="uk-pagination uk-flex-center uk-margin-medium-top" uk-margin>
+    <li><a href="#"><span uk-pagination-previous></span></a></li>
+    <li class="uk-active"><a href="#">1</a></li>
+    <li class="uk-disabled"><span>...</span></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">6</a></li>
+    <li><span>7</span></li>
+    <li><a href="#">8</a></li>
+    <li><a href="#"><span uk-pagination-next></span></a></li>
+</ul>

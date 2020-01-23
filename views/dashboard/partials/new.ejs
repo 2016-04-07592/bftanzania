@@ -1,18 +1,25 @@
 <a href="/admin/dashboard/" class="uk-button uk-button-link uk-icon tm-back"><span
 		uk-icon="icon: chevron-left; "></span>Back</a>
 
-<h2 class="uk-h3 uk-margin-small-top">New Executive</h2>
+<h2 class="uk-h3 uk-margin-small-top"><%= viewTitle %></h2>
 <ul class="uk-breadcrumb uk-margin-remove-top uk-margin-medium-bottom">
 	<li><a href="#articles">Executives</a></li>
-	<li class="uk-disabled"><a href="#">New Executive</a></li>
+	<li class="uk-disabled"><a href="#"><%= viewTitle %></a></li>
 </ul>
-<form class="uk-form-stacked">
+<% if(error != '') { %>
+<%- include ("./error.ejs") %>
+<% } %>
+<% if(success != '') { %>
+<%- include ("./success.ejs") %>
+<% } %>
+<form class="uk-form-stacked" action="/admin/dashboard/upload" method="POST" enctype="multipart/form-data">
+	<input type="hidden" name="id" value="<%= data %>">
 	<div class="">
 		<label for="file-input" class="uk-card uk-card-default uk-height-medium uk-display-block uk-width-medium"
 			data-cropzee="file-input"></label>
 		<div class="uk-margin">
 			<div uk-form-custom>
-				<input id="file-input" type="file">
+				<input id="file-input" type="file" name="avatar">
 				<button class="uk-button uk-button-default" type="button" tabindex="-1">Add Photo</button>
 				<div id="file-input-button"
 					class="uk-width-1-1 uk-height-1-1 uk-position-absolute uk-position-z-index uk-position-top-left cursor-pointer">
@@ -26,7 +33,7 @@
 			<div class="uk-margins">
 				<label class="uk-form-label">First Name</label>
 				<div class="uk-form-controls">
-					<input class="uk-input" type="text" placeholder="First Name">
+					<input class="uk-input" type="text" name="first_name" placeholder="First Name">
 				</div>
 			</div>
 		</div>
@@ -34,7 +41,7 @@
 			<div class="uk-margins">
 				<label class="uk-form-label">Middle Name</label>
 				<div class="uk-form-controls">
-					<input class="uk-input" type="text" placeholder="Middle Name">
+					<input class="uk-input" type="text" placeholder="Middle Name" name="middle_name">
 				</div>
 			</div>
 		</div>
@@ -42,7 +49,7 @@
 			<div class="uk-margins">
 				<label class="uk-form-label">Last Name</label>
 				<div class="uk-form-controls">
-					<input class="uk-input" type="text" placeholder="Last Name">
+					<input class="uk-input" type="text" placeholder="Last Name" name="last_name">
 				</div>
 			</div>
 		</div>
@@ -53,18 +60,19 @@
 			<div class="uk-margins">
 				<label class="uk-form-label">Title</label>
 				<div class="uk-form-controls">
-					<input class="uk-input" type="text" placeholder="Title">
+					<input class="uk-input" type="text" placeholder="Title" name="title">
 				</div>
 			</div>
 		</div>
 		<div>
 			<div class="uk-margins">
 				<label for="resume-input" class="uk-form-label">Resume</label>
-				<div uk-form-custom>
-					<input id="resume-input" type="file">
+				<div uk-form-custom="> div">
+					<input id="resume-input" type="file" name="resume">
 					<button class="uk-button uk-button-default" type="button" tabindex="-1">Upload Resume</button>
 					<label for="resume-input"
 						class="uk-width-1-1 uk-height-1-1 uk-position-absolute uk-position-z-index uk-position-top-left cursor-pointer"></label>
+					<div></div>
 				</div>
 			</div>
 		</div>
@@ -75,7 +83,7 @@
 			<div class="uk-margins">
 				<label class="uk-form-label">Phone</label>
 				<div class="uk-form-controls">
-					<input class="uk-input" type="tel" placeholder="Phone">
+					<input class="uk-input" type="tel" placeholder="Phone" name="phone">
 				</div>
 			</div>
 		</div>
@@ -83,7 +91,7 @@
 			<div class="uk-margins">
 				<label class="uk-form-label">Email</label>
 				<div class="uk-form-controls">
-					<input class="uk-input" type="text" placeholder="Email">
+					<input class="uk-input" type="text" placeholder="Email" name="email">
 				</div>
 			</div>
 		</div>
@@ -94,7 +102,7 @@
 			<div class="uk-margins">
 				<label class="uk-form-label">Bio</label>
 				<div class="uk-form-controls">
-					<textarea class="uk-textarea" rows="8" placeholder="Bio"></textarea>
+					<textarea class="uk-textarea" rows="8" placeholder="Bio" name="bio"></textarea>
 				</div>
 			</div>
 		</div>
@@ -106,7 +114,14 @@
 			<div class="uk-margins">
 				<label class="uk-form-label">Platform</label>
 				<div class="uk-form-controls">
-					<input class="uk-input" type="text" placeholder="Platform">
+					<!-- <input class="uk-input" type="text" placeholder="Platform" name="social_media"> -->
+					<select class="uk-select" placeholder="Platform" name="social_media">
+						<option>instagram</option>
+						<option>twitter</option>
+						<option>facebook</option>
+						<option>whatsapp</option>
+						<option>linkedin</option>
+					</select>
 				</div>
 			</div>
 		</div>
@@ -114,13 +129,13 @@
 			<div class="uk-margins">
 				<label class="uk-form-label">Username/ID</label>
 				<div class="uk-form-controls">
-					<input class="uk-input" type="text" placeholder="Username">
+					<input class="uk-input" type="text" placeholder="Username" name="social_username">
 				</div>
 			</div>
 		</div>
 	</div>
 	<p class="uk-text-right">
-		<button onclick="addSocial(this);" class="uk-button uk-button-default">Add <span
+		<button type="button" onclick="addSocial(this);" class="uk-button uk-button-default">Add <span
 				uk-icon="icon: plus; ratio: 0.8"></span></button>
 	</p>
 
@@ -128,16 +143,16 @@
 
 	<div class="footer-buttons">
 		<div class="footer-padding">
-			<button type="submit" onclick="alert($('#dates-select').val());"
+			<button type="submit"
 				class="uk-button uk-button-primary uk-icon uk-align-right uk-margin-remove-bottom"><span
 					uk-icon="icon: check; "></span> Publish</button>
 		</div>
 	</div>
 </form>
-
+<script src="https://cdn.jsdelivr.net/gh/BossBele/cropzee@latest/dist/cropzee.js" defer></script>
 <script>
 	$(document).ready(function () {
-		$('#dates-select').select2({
+		$('#dates-select').select({
 			tags: true,
 		});
 		$("#file-input-button").click(function () {

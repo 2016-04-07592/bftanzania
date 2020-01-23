@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en" class="no-js">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -11,12 +12,15 @@
 	<link rel="stylesheet" href="../css/style.css"> <!-- Resource style -->
 	<link rel="stylesheet" href="../css/main.css">
 	<script src="/js/modernizr.js"></script> <!-- Modernizr -->
-  	<!-- jquery -->
+	<!-- jquery -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<!-- UIkit JS -->
+	<script src="https://cdn.jsdelivr.net/gh/BossBele/cropzee@latest/dist/cropzee.js" defer></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit-icons.min.js"></script>\
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/uikit/3.2.0/js/uikit-icons.min.js"></script>
 	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<title>IMI Administration</title>
 	<style>
 		.cd-main-content .content-wrapper {
@@ -24,6 +28,7 @@
 		}
 	</style>
 </head>
+
 <body>
 	<header class="cd-main-header uk-dark">
 		<a href="../" class="cd-logo">
@@ -36,51 +41,59 @@
 
 	<main class="cd-main-content">
 		<div class="content-wrapper">
-        <!-- Page Content -->
-        <div class="uk-text-center">
-        	<img style="height:80px;" data-src="../logo.png" uk-img>
-        </div>
-        <div class="uk-margin-top">
-        	<div class="uk-container uk-container-small">
-			<form class="uk-form-stacked">
-				<div class="uk-child-width-expand@s" uk-grid>
-					<div>
-						<div class="uk-margin">
-							<label class="uk-form-label" for="username">Username</label>
-							<div class="uk-form-controls">
-								<input class="uk-input" id="username" type="text" placeholder="Username...">
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="uk-child-width-expand@s uk-margin-small-top" uk-grid>
-					<div>
-						<div class="uk-margin">
-							<label class="uk-form-label" for="email">Email</label>
-							<div class="uk-form-controls">
-								<input class="uk-input" id="email" type="email" placeholder="Email...">
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="uk-child-width-expand@s uk-margin-small-top" uk-grid>
-					<div>
-							<div class="uk-margins">
-								<label class="uk-form-label" for="password">Password</label>
-								<div class="uk-form-controls">
-									<input class="uk-input" id="fpassword" type="password" placeholder="Password...">
+			<!-- Page Content -->
+			<div class="uk-text-center">
+				<img style="height:80px;" data-src="../logo.png" uk-img>
+			</div>
+			<div class="uk-margin-top">
+
+				<div class="uk-container uk-container-small">
+					<% if(error != '') { %>
+					<%- include ("partials/error.ejs") %>
+					<% } %>
+					<form class="uk-form-stacked" action="/admin/login" method="post">
+						<div class="uk-child-width-expand@s" uk-grid>
+							<div>
+								<div class="uk-margin">
+									<label class="uk-form-label" for="username">Username</label>
+									<div class="uk-form-controls">
+										<input class="uk-input" id="username" name="username" type="text"
+											placeholder="Username...">
+									</div>
 								</div>
 							</div>
-					</div>
-				</div>
-				<br />
-				<button type="submit" class="uk-button uk-button-primary uk-width-1-1"> Login</button>
-			</form>
+						</div>
 
+						<div class="uk-child-width-expand@s uk-margin-small-top" uk-grid>
+							<div>
+								<div class="uk-margins">
+									<label class="uk-form-label" for="password">Password</label>
+									<div class="uk-form-controls">
+										<input class="uk-input" id="password" name="password" type="password"
+											placeholder="Password...">
+									</div>
+								</div>
+							</div>
+						</div>
+						<br />
+						<button type="submit" class="uk-button uk-button-primary uk-width-1-1"> Login</button>
+					</form>
+
+				</div>
 			</div>
-        </div>
-        <!-- /#page-content-wrapper -->
+			<!-- /#page-content-wrapper -->
 		</div> <!-- .content-wrapper -->
 	</main> <!-- .cd-main-content -->
 </body>
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+	integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+	integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+	integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+</script>
+
 </html>

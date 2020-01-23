@@ -1,0 +1,123 @@
+<%- include ("partials/header.ejs") %>
+
+<div class="content-wrapper">
+    <!-- Page Content -->
+    <div id="page-content-wrapper uk-margin-top">
+
+        <div class="uk-container uk-container-expand uk-padding-remove-horizontal" id="content">
+
+            <a href="/admin/dashboard/" class="uk-button uk-button-link uk-icon tm-back"><span
+                    uk-icon="icon: chevron-left; "></span>Back</a>
+
+            <div class="uk-child-width-expand@s uk-margin-small-top uk-flex-top" uk-grid>
+                <div>
+                    <div class="uk-flex uk-flex-wrap ">
+                        <div class="uk-width-1-1">
+                            <h2 class="uk-h3">View <%= viewTitle %> Requests</h2>
+                        </div>
+                        <div class="uk-width-1-1">
+                            <ul class="uk-breadcrumb">
+                                <li><a href="#">Home</a></li>
+                                <li class="uk-disabled"><a href="#"><%= viewTitle %> Requests</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div>
+
+                </div>
+            </div>
+
+            <div class="uk-child-width-expand@s uk-margin-small-top uk-flex-middle" uk-grid>
+
+                <div class="uk-width-expand">
+                    <div class="uk-child-width-expand@s" uk-grid>
+                        <div class="uk-button-group uk-width-auto">
+                            <div class="uk-inline">
+                                <button class="uk-button uk-button-default" type="button"><span
+                                        uk-icon="icon: list"></span>&ensp;<span
+                                        id="selected-articles-status">All</span></button>
+                                <div uk-dropdown="mode: click">
+                                    <ul class="uk-nav uk-dropdown-nav">
+                                        <li class="uk-active" onclick="selectStatus(this)"><a href="#"
+                                                data-unlink>All</a></li>
+                                        <li onclick="selectStatus(this)"><a href="#" data-unlink>Published</a></li>
+                                        <li onclick="selectStatus(this)"><a href="#" data-unlink>Draft</a></li>
+                                        <li onclick="selectStatus(this)"><a href="#" data-unlink>Trash</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="uk-width-expand">
+                            <form class="uk-search uk-search-default uk-width-5-6">
+                                <span uk-search-icon></span>
+                                <input class="uk-search-input uk-flex-wrap-stretch" id="search" type="search"
+                                    placeholder="Search...">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="uk-width-auto">
+
+                </div>
+
+
+            </div>
+            <hr class="uk-divider-icon">
+
+            <% if ( viewTitle == "Member"){ %>
+            <%- include ("partials/member.ejs") %>
+            <% } else if( viewTitle == "Partner"){ %>
+            <%- include ("partials/partner.ejs") %>
+            <% } else if (viewTitle == "Sponsor"){ %>
+            <%- include ("partials/sponsor.ejs") %>
+            <% } %>
+
+
+        </div>
+    </div>
+    <!-- /#page-content-wrapper -->
+</div> <!-- .content-wrapper -->
+
+</main> <!-- .cd-main-content -->
+<script src="/js/jquery.menu-aim.js"></script>
+<script src="/js/main.js"></script> <!-- Resource jQuery -->
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+</script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+</script>
+
+
+<script>
+    $("#search").keyup(function () {
+        var value = this.value.toLowerCase().trim();
+
+        $("table").find("tr").each(function (index) {
+            if (!index) return;
+            var id = $(this).find("td").first().text();
+            id = id.toLowerCase().trim();
+            $(this).toggle(id.indexOf(value) !== -1);
+        });
+    });
+
+    function selectStatus(obj) {
+        $(obj).siblings().removeClass("uk-active");
+        var text = $(obj).find("a").text();
+        $(obj).addClass("uk-active");
+        $("#selected-articles-status").text(text);
+    }
+    $(document).ready(function () {
+        $("[data-unlink]").click(function (e) {
+            e.preventDefault();
+        });
+    });
+</script>
+</body>
+
+</html>

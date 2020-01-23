@@ -1,0 +1,213 @@
+<style>
+    :root {
+        --bg: #fdfdfd;
+        --highlight1: #ED4264;
+        --highlight2: #FFEDBC;
+        --color: #1a1e24;
+    }
+
+    .list {
+        list-style: none;
+        width: 600px;
+        max-width: 90%;
+    }
+
+    .item {
+        display: block;
+        clear: both;
+        counter-increment: list;
+        padding-bottom: 4rem;
+        font-size: 1.1rem;
+        line-height: 1.375;
+        position: relative;
+    }
+
+    .item:before {
+        font: bold 2.25rem/1 var(--font-number);
+        font-size: 2.25rem;
+        content: counter(list);
+        width: 5rem;
+        height: 5rem;
+        float: left;
+        margin: 0 1.5rem 0.75rem 0;
+        color: var(--bg);
+        background: var(--highlight1) linear-gradient(to bottom right, var(--highlight1) 25%, var(--highlight2));
+        text-shadow: 0 0 2px var(--highlight1);
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        shape-outside: ellipse();
+        z-index: 1;
+    }
+
+    .item:after {
+        width: 2.5rem;
+        height: 2.5rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+        background: var(--highlight1);
+        z-index: -1;
+        border-top-left-radius: 3px;
+    }
+
+    .headline {
+        padding: 0rem 0 0 0;
+        margin: 0 0 1rem 0;
+    }
+</style>
+<div class="uk-cover-container">
+    <canvas width="" height="420"></canvas>
+    <div class="uk-position-bottom uk-padding-small uk-text-left uk-light" style="z-index:1; width:100%;">
+        <h2 class="uk-h2 uk-margin-small">About BFA</h2>
+    </div>
+    <img src="/img/bfa9.jpg" alt="" uk-cover>
+</div>
+
+<div class="uk-section uk-section-default uk-container">
+    <div class="uk-grid-small uk-grid-match" uk-grid>
+        <div class="uk-padding-large uk-padding-remove-vertical">
+            <h3 class="uk-h3 uk-text-bold">BFA</h3>
+            <p>
+                Builders of Future Africa (B.F.A.) is a non-governmental organization registered by the government of
+                Tanzania act of 2002 under registration number00NGO/0009237 to operate in Tanzania main land and
+                accredited by the International Youth Federation (IYF) with accreditation number AO/001213 for regional
+                and International accreditation.
+                <hr>
+                The aim of the organization is to build a prosperous Africa by restoring hope to children who have lost
+                it and helping them meet their own essential needs. The organization was established by passionate youth
+                in 2012 in Arusha (who were A-level students at Cornerstone Leadership Academy by then) after observing
+                high levels of poverty and the low life standards of children in the local communities which has
+                consequently led to problems such as lack of scholastic materials,poor parental care,lack of food,
+                shelter and clothing as well as horrifying life testimonies. All these problems combined called for a
+                collective effort to come up with solutions thus the birth of Builders of Future Africa (B.F.A).
+                <hr>
+                B.F.A is currently sponsoring over 150 children and out of them 30 are being fully sponsored and the
+                rest are partially sponsored. The sponsorship covers for the school uniforms, scholastic materials,
+                school fees as well as health insurance on annual basis. Other forms of support include academic
+                assistance and character development programs alongside fun games, sports and consultations which take
+                place every Saturday evening at the Academy’s campus. Recently, the organization has extended its works
+                to other cities such as Dar es Salaam, Morogoro and Dodoma with the growing number of members as well as
+                well-wishers across the country.
+            </p>
+        </div>
+    </div>
+</div>
+
+<div class="uk-section  uk-padding-remove-vertical">
+    <div class="uk-container">
+        <div class="uk-child-width-1-2@m" uk-grid>
+            <div>
+                <h3 class="uk-h3 uk-text-bold">Objectives</h3>
+                <ol class="list">
+                    <li class="item">
+                        <h3 class="headline uk-h3">Number one</h3><span>Fighting poverty by educating the young
+                            generation and encouraging them to work hard and to follow their dreams.</span>
+                    </li>
+                    <li class="item">
+                        <h3 class="headline uk-h3">Number two</h3><span>To help the needy African children know their
+                            rights and that their basic needs are met.</span>
+                    </li>
+                    <li class="item">
+                        <h3 class="headline uk-h3">Number three</h3><span>To assist the needy children in African
+                            communities have access to quality health services and sanitation.</span>
+                    </li>
+                    <li class="item">
+                        <h3 class="headline uk-h3">Number four</h3><span>We aim at instilling good and socially
+                            acceptable character qualities in children for the general transformation of African
+                            communities.</span>
+                    </li>
+                    <li class="item">
+                        <h3 class="headline uk-h3">Number five</h3><span>To spread the message of Love, Hope and Faith
+                            to the community through children them being the foundation for change.</span>
+                    </li>
+                    <li class="item">
+                        <h3 class="headline uk-h3">Number six</h3><span>Avoiding conflicts teaching the value of peace,
+                            reconciliation above all sorts of stereotypes and by encouraging them to embrace unity in
+                            diversity.</span>
+                    </li>
+                </ol>
+            </div>
+            <div class="uk-padding-large uk-padding-remove-vertical uk-cover-container">
+                <div class="uk-card uk-card-default uk-margin border-rounded">
+                    <div class="uk-card-media-top border-rounded-top">
+                        <img class="border-rounded-top" data-src="img/bfa8.jpg" uk-img>
+                    </div>
+                    <div class="uk-card-body">
+                        <h3 class="uk-card-title">Media Top</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+                        </p>
+                    </div>
+                </div>
+                <div class="uk-card uk-card-default uk-margin border-rounded">
+                    <div class="uk-card-media-top border-rounded-top">
+                        <img class="border-rounded-top" data-src="img/bfa8.jpg" uk-img>
+                    </div>
+                    <div class="uk-card-body">
+                        <h3 class="uk-card-title">Media Top</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <div class="uk-tile uk-tile-muted">
+        <h2 class="uk-h2">Relevant Information</h2>
+        <div class="uk-grid-small uk-grid-match" uk-grid>
+            <div id="accommodation">
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <h3 class="uk-card-title">Accommodation</h3>
+                        <p>We organise and arrange accommodation to suit the needs of various delegates. We are associated with reputable hotels and guest houses to provide a good bed & breakfast accommodation at discounted rates. <a href="#inquiries" uk-scroll>Contact us</a> for rates.</p>
+                    </div>
+                </div>
+            </div>
+            <div id="transport">
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <h3 class="uk-card-title">Transport</h3>
+                        <p>Our vehicles provide free transport during excursions and hospitality tours, to and from the Airport, to and from the lecture venues if this is not practically feasible within a walking distance.</p>
+                    </div>
+                </div>
+            </div>
+            <div id="travel-visas-pass">
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <h3 class="uk-card-title">Travel, Visas and Student's Pass</h3>
+                        <p>All course delegates attending a training in Swaziland require a student's pass (visa). This takes a day to be processed at a cost that is included in the tuition fee and it is processed before course delegate(s) arrives in Swaziland. All public/ scheduled programmes include hospitality tours within Mozambique, Namibia, South Africa or Swaziland. These countries are visa free for Tanzania Citizens. We advise all delegates from other countries to consult the respective embassies in their home countries for visa formalities before leaving for Swaziland.</p>
+                    </div>
+                </div>
+            </div>
+            <div id="living-expenses">
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <h3 class="uk-card-title">Living Expenses</h3>
+                        <p>The official currency in Swaziland is a Swazi Lilangeni (SZL) which is an equivalent to a South African Rand (ZAR). The South African currency is also used in Swaziland. People coming to Swaziland from overseas generally find the cost of living comparatively low due to the depreciated local currency. Restaurant prices vary depending on the type of establishment. A good meal for one at an average restaurant costs around R150, top category establishments can cost up to R200. These prices are based on one course and a soft drink or a beer. However, hotels and restaurants charge tax in addition to the prices shown for meals and accommodation. Although most prices are tax inclusive, services are also subject to VAT at a rate of 15%.</p>
+                    </div>
+                </div>
+            </div>
+            <div id="weather">
+                <div>
+                    <div class="uk-card uk-card-default uk-card-body">
+                        <h3 class="uk-card-title">Weather</h3>
+                        <p>Climate in Swaziland varies according to altitude, with the higher areas being generally cloudy and cooler than the rest of Swaziland. The rainy season is generally between November and April and is also humid and wet (Summer). And the cooler, drier conditions are generally between May and October (Winter).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+<script>
+    $(document).ready(function () {
+        if (target) {
+            UIkit.scroll('#content', {
+                offset: 100
+            }).scrollTo('#' + target);
+        }
+    });
+</script>

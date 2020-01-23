@@ -15,30 +15,6 @@
 <script src="/js/main.js"></script> <!-- Resource jQuery -->
 
 <script>
-    function get_content(tpl, div) {
-        $.get(tpl, function (result) {
-            $result = $(result);
-
-            $(div).html(result);
-            $result.find('script').appendTo(div);
-        }, 'html');
-
-    }
-    crossroads.addRoute('/{section}/{subsection}', function (section, subsection) {
-        get_content('templates/' + section + '/' + subsection + '.html', '#content');
-    });
-    crossroads.addRoute('/', function (id) {
-        get_content('templates/home.html', '#content');
-    });
-
-    //setup hasher
-    function parseHash(newHash, oldHash) {
-        crossroads.parse(newHash);
-    }
-    hasher.initialized.add(parseHash); //parse initial hash
-    hasher.changed.add(parseHash); //parse hash changes
-    hasher.init(); //start listening for history change
-
     (function ($) {
         var $window = $(window),
             $html = $('#wrapper');
