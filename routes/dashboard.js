@@ -43,9 +43,9 @@ const upload = multer({
 // });
 
 const db = mysql.createConnection({
-  host: 'wvulqmhjj9tbtc1w.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306',
+  host: 'wvulqmhjj9tbtc1w.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
   user: 'ybjdlt5cp5rnce4u',
-  password: 'fxss570h4bwcmj6y ',
+  password: 'fxss570h4bwcmj6y',
   database: 'rj22wkfvawzki9ya'
 });
 
