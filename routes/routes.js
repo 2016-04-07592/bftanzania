@@ -7,10 +7,10 @@ var nodemailer = require('nodemailer');
 
 //create connection to database
 const db = mysql.createConnection({
-    host: '127.0.0.1',
-    user: 'root',
-    password: '',
-    database: 'bfatanzania'
+    host: 'wvulqmhjj9tbtc1w.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+    user: 'ybjdlt5cp5rnce4u',
+    password: 'fxss570h4bwcmj6y ',
+    database: 'rj22wkfvawzki9ya'
 });
 
 
